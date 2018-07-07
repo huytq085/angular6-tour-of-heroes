@@ -1,5 +1,6 @@
 import { HeroService } from './../hero.service';
 import { Hero } from './../hero';
+import {NgForm} from '@angular/forms';
 
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -25,6 +26,11 @@ export class HeroesDetailComponent implements OnInit {
 
   goBack(): void {
     this.location.back();
+  }
+
+  save(): void {
+    this.heroService.updateHero(this.hero)
+        .subscribe(() => this.goBack())
   }
 
   getHero(): void {

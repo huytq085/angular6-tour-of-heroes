@@ -1,4 +1,9 @@
 <button (click)="goBack()">Back</button>
+<h2>Hero Detail</h2>
 <div *ngIf="hero">
-  <p>Selected Hero: {{ hero.name }}</p>
+  <p>Id: {{hero.id}}</p>
+  <p>Name: {{hero.name}}</p>
+  <input [(ngModel)]="hero.name" placeholder="name"/>  
+  <br>
+  <button (click)="save()">Save</button>
 </div>
